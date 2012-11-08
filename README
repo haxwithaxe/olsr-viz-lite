@@ -1,0 +1,3 @@
+
+put on machine running olsrd and run "self_serv" or put it in the webroot of a webserver and make "cgi-bin" a cgi-bin.
+to set the port edit the self_serve script or set PORT to any integer between 1 and 65335 (given sufficient permissions for 1 to 1024).

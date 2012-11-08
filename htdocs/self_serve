@@ -1,0 +1,4 @@
+#!/bin/bash
+
+PORT=${PORT:-8089}
+python -m CGIHTTPServer $PORT
