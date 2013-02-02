@@ -1,4 +1,24 @@
-#!/bin/bash
+#!/usr/bin/env python
 
-PORT=${PORT:-8089}
-python -m CGIHTTPServer $PORT
+import os
+import BaseHTTPServer
+import CGIHTTPServer
+import cgitb; cgitb.enable()  ## This line enables CGI error reporting
+
+try:
+	PORT = int(os.environ['PORT'],10)
+except:
+	PORT = 8089
+try:
+	HOST = os.environ['HOST']
+except:
+	HOST = '127.0.0.1'
+
+server = BaseHTTPServer.HTTPServer
+handler = CGIHTTPServer.CGIHTTPRequestHandler
+server_address = (HOST, PORT)
+handler.cgi_directories = [""]
+
+httpd = server(server_address, handler)
+httpd.serve_forever()
+
