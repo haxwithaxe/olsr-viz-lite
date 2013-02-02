@@ -14,10 +14,11 @@ try:
 except:
 	HOST = '127.0.0.1'
 
+
 server = BaseHTTPServer.HTTPServer
 handler = CGIHTTPServer.CGIHTTPRequestHandler
 server_address = (HOST, PORT)
-handler.cgi_directories = [""]
+#this breaks the cgi-bin#handler.cgi_directories = ["cgi-bin"]
 
 httpd = server(server_address, handler)
 httpd.serve_forever()
