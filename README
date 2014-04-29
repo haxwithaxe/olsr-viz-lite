@@ -1,3 +1,2 @@
-
-put on machine running olsrd and run "self_serv" or put it in the webroot of a webserver and make "cgi-bin" a cgi-bin.
-to set the port edit the self_serve script or set PORT to any integer between 1 and 65335 (given sufficient permissions for 1 to 1024).
+Put on a machine running olsrd and run "self_serve.py" or put it in the webroot of a webserver and make the "cgi-bin" directory a cgi-bin.
+To set the port edit "self_serve.py" or set the "PORT" environmental variable to any integer between 1 and 65335 (given sufficient permissions for 1 to 1024).
